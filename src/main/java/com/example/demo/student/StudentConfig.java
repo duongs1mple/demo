@@ -27,7 +27,7 @@ public class StudentConfig {
 
                     "Bong",
                     LocalDate.of(1994, Month.JULY, 5),
-                    "ditconmebong@gmail.com"
+                    "hangs2bong@gmail.com"
             );
             Student hanh = new Student( // no Serializable error //use Ctrl+Alt+V => Refactor
                     //Remove ID since the DB generates automatically

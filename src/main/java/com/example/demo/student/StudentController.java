@@ -19,6 +19,7 @@ public class StudentController {
     public StudentController(StudentService studentService) {
         this.studentService =  studentService;
     }
+    //GET api
     @GetMapping
     public List<Student> getStudents(){
         return studentService.getStudents();
@@ -31,6 +32,21 @@ public class StudentController {
         studentService.addNewStudent(student);
 
     }
+    //Method for Delete Request
+    @DeleteMapping(path = "{studentId}")  // can phai xem lai
+    public void deleteStudent(@PathVariable("studentId") Long studentId) {
+        //  Must create method deleteStudent in StudentService
+            studentService.deleteStudent(studentId);
+    }
+
+    //Method for PUT request ( UPDATE)
+    @PutMapping(path = "{studentId}")
+    public void updateStudent(
+            @PathVariable("studentId") Long studentId,
+            @RequestParam(required = false) String name,
+            @RequestParam(required = false) String email){
+        studentService.updateStudent(studentId, name , email);
+    }
+    }
 
 
-}
